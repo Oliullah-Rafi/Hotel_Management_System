@@ -20,7 +20,7 @@ namespace DAL.Repos
         public bool Delete(int id)
         {
             var ex = Read(id);
-            db.Guests.Remove(ex);
+            db.Rooms.Remove(ex);
             return db.SaveChanges() > 0;
         }
 

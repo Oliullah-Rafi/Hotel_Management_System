@@ -13,7 +13,9 @@ namespace DAL.Repos
         public Hotel Create(Hotel obj)
         {
             db.Hotels.Add(obj);
+
             if (db.SaveChanges() > 0) return obj;
+
             return null;
         }
 

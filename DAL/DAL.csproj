@@ -77,7 +77,7 @@
     <Compile Include="Repos\RoomRepo.cs" />
     <Compile Include="Repos\RoomTypeRepo.cs" />
     <Compile Include="Repos\StaffRepo.cs" />
-    <Compile Include="StaffContext.cs" />
+    <Compile Include="DataAccessFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
