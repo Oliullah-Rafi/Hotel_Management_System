@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202312241336559_initDB.cs" />
     <Compile Include="Migrations\202312241336559_initDB.designer.cs">
       <DependentUpon>202312241336559_initDB.cs</DependentUpon>
