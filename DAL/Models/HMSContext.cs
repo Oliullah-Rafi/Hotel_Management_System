@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Models
 {
-   internal class HMSContext :DbContext
+   internal class HMSContext :DbContext //DBContext
     {
         public DbSet<Hotel> Hotels { get; set; }
 
