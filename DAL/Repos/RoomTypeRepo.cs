@@ -8,40 +8,38 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    class HotelRepo : Repo, IRepo<Hotel, string, Hotel>
+    internal class RoomTypeRepo : Repo, IRepo<RoomType, int, RoomType>
     {
-        public Hotel Create(Hotel obj)
+        public RoomType Create(RoomType obj)
         {
-            db.Hotels.Add(obj);
+            db.RoomTypes.Add(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
         }
 
-
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             var ex = Read(id);
-            db.Hotels.Remove(ex);
+            db.RoomTypes.Remove(ex);
             return db.SaveChanges() > 0;
         }
 
-        public List<Hotel> Read()
+        public List<RoomType> Read()
         {
-            return db.Hotels.ToList();
+            return db.RoomTypes.ToList();
         }
 
-        public Hotel Read(string id)
+        public RoomType Read(int id)
         {
-            return db.Hotels.Find(id);
+            return db.RoomTypes.Find(id);
         }
 
-        public Hotel Update(Hotel obj)
+        public RoomType Update(RoomType obj)
         {
-            var ex = Read(obj.UserName);// Update 
+            var ex = Read(obj.TypeID);// Update 
             db.Entry(ex).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
-
         }
     }
 }

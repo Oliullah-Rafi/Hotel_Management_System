@@ -69,6 +69,14 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Models\Staff.cs" />
+    <Compile Include="Repos\BookingRepo.cs" />
+    <Compile Include="Repos\GuestRepo.cs" />
+    <Compile Include="Repos\HotelRepo.cs" />
+    <Compile Include="Repos\PaymentRepo.cs" />
+    <Compile Include="Repos\Repo.cs" />
+    <Compile Include="Repos\RoomRepo.cs" />
+    <Compile Include="Repos\RoomTypeRepo.cs" />
+    <Compile Include="Repos\StaffRepo.cs" />
     <Compile Include="StaffContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
