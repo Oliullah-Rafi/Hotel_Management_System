@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Guest.cs" />
+    <Compile Include="Models\HMSContext.cs" />
     <Compile Include="Models\Hotel.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Room.cs" />

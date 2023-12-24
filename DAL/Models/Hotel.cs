@@ -12,6 +12,10 @@ namespace DAL.Models
         [Key]
         public int HotelID { get; set; }
         [Required]
+        public string UserName { get; set; }
+
+        [Required]
+        public string Password { get; set; }
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
@@ -26,6 +30,20 @@ namespace DAL.Models
         [Required]
         public DateTime CheckoutTime { get; set; }
 
+
+  /*      public virtual ICollection<Staff> Hotels { get; set; }
+
+        public Hotel()
+        {
+            Hotels = new List<Staff>();
+        }
+*/
+        public virtual ICollection<Room> Hotels { get; set; }
+
+        public Hotel()
+        {
+            Hotels = new List<Room>();
+        }
 
 
 

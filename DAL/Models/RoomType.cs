@@ -23,5 +23,13 @@ namespace DAL.Models
 
         [Required]
         public int Capacity { get; set; }
+
+
+        public virtual ICollection<Room> RoomTypes { get; set; }
+
+        public RoomType()
+        {
+            RoomTypes = new List<Room>();
+        }
     }
 }

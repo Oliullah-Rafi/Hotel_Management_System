@@ -29,7 +29,12 @@ namespace DAL.Models
 
         public virtual RoomType RoomType { get; set; }
 
+        public virtual ICollection<Booking> Rooms { get; set; }
 
+        public Room()
+        {
+            Rooms = new List<Booking>();
+        }
 
     }
 }

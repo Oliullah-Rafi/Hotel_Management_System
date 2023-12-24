@@ -33,5 +33,13 @@ namespace DAL.Models
 
         public virtual Room Room { get; set; }
         public virtual Guest Guest { get; set; }
+
+
+        public virtual ICollection<Payment> Bookings { get; set; }
+
+        public Booking()
+        {
+            Bookings = new List<Payment>();
+        }
     }
 }
