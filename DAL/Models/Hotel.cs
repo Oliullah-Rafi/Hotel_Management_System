@@ -16,6 +16,9 @@ namespace DAL.Models
 
         [Required]
         public string Password { get; set; }
+
+        [Required]
+        public string UserType { get; set; }
         public string Name { get; set; }
         [Required]
         public string Address { get; set; }
