@@ -29,7 +29,7 @@ namespace DAL.Models
         public DateTime CheckoutTime { get; set; }
 
         [Required]
-        public int TotalPrice { get; set; }
+        public string TotalPrice { get; set; }
 
         public virtual Room Room { get; set; }
         public virtual Guest Guest { get; set; }

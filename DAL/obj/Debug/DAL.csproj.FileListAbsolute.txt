@@ -10,3 +10,6 @@ C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cac
 C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.dll
 C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.pdb
+C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.Migrations.initDB.resources
+C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\acer\source\repos\HMSApp\DAL\obj\Debug\DAL.Migrations.initDBall.resources

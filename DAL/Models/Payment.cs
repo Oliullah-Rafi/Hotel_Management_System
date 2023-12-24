@@ -17,7 +17,7 @@ namespace DAL.Models
         public int BookingID { get; set; }
 
         [Required]
-        public int Amount { get; set; }
+        public string Amount { get; set; }
 
         [Required]
         public DateTime PaymentDate { get; set; }

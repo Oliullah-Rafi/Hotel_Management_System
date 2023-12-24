@@ -51,6 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202312241336559_initDB.cs" />
+    <Compile Include="Migrations\202312241336559_initDB.designer.cs">
+      <DependentUpon>202312241336559_initDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202312241351435_initDBall.cs" />
+    <Compile Include="Migrations\202312241351435_initDBall.designer.cs">
+      <DependentUpon>202312241351435_initDBall.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Guest.cs" />
@@ -63,7 +71,14 @@
     <Compile Include="StaffContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202312241336559_initDB.resx">
+      <DependentUpon>202312241336559_initDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202312241351435_initDBall.resx">
+      <DependentUpon>202312241351435_initDBall.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

@@ -25,7 +25,7 @@ namespace DAL.Models
         public string Position { get; set; }
 
         [Required]
-        public int Salary { get; set; }
+        public string Salary { get; set; }
 
         [Required]
         public DateTime DateOfBirth { get; set; }

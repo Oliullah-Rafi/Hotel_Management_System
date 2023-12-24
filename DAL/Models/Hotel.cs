@@ -27,7 +27,7 @@ namespace DAL.Models
         [Required]
         public string Email { get; set; }
         [Required]
-        public int Starts { get; set; }
+        public string Stars { get; set; }
         [Required]
         public DateTime CheckinTime { get; set; }
         [Required]
