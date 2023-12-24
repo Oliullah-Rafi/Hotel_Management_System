@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL.Repos
 {
-    class HotelRepo : Repo, IRepo<Hotel, string, Hotel>
+    class HotelRepo : Repo, IRepo<Hotel, int, Hotel>
     {
         public Hotel Create(Hotel obj)
         {
@@ -18,7 +18,7 @@ namespace DAL.Repos
         }
 
 
-        public bool Delete(string id)
+        public bool Delete(int id)
         {
             var ex = Read(id);
             db.Hotels.Remove(ex);
@@ -30,14 +30,14 @@ namespace DAL.Repos
             return db.Hotels.ToList();
         }
 
-        public Hotel Read(string id)
+        public Hotel Read(int id)
         {
             return db.Hotels.Find(id);
         }
 
         public Hotel Update(Hotel obj)
         {
-            var ex = Read(obj.UserName);// Update 
+            var ex = Read(obj.HotelID);// Update 
             db.Entry(ex).CurrentValues.SetValues(obj);
             if (db.SaveChanges() > 0) return obj;
             return null;
