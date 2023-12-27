@@ -41,5 +41,35 @@ namespace BLL.Services
             return mapped;
         }
 
+
+
+        public static Hotel Add(HotelDTO c)
+        {
+
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<HotelDTO, Hotel>();
+            });
+
+            var mapper = new Mapper(config);
+            var data = mapper.Map<Hotel>(c);
+
+            return DataAccessFactory.HotelData().Create(data);
+        }
+
+        public static Hotel Update(HotelDTO c)
+        {
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<HotelDTO, Hotel>();
+            });
+
+            var mapper = new Mapper(config);
+            var updatedData = mapper.Map<Hotel>(c);
+            return DataAccessFactory.HotelData().Update(updatedData);
+        }
+
+        public static bool Delete(int id)
+        {
+            return DataAccessFactory.HotelData().Delete(id);
+        }
     }
 }
