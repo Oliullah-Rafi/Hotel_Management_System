@@ -9,39 +9,37 @@ using System.Threading.Tasks;
 namespace DAL.Repos
 {
 
-    internal class BookingRepo : Repo, IRepo<Booking, int, Booking>
+    internal class BookingRepo : Repo, IBooking<Booking, int, Booking>
     {
         public Booking Create(Booking obj)
         {
-            db.Bookings.Add(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
+            throw new NotImplementedException();
         }
 
         public bool Delete(int id)
         {
-            var ex = Read(id);
-            db.Bookings.Remove(ex);
-            return db.SaveChanges() > 0;
+            throw new NotImplementedException();
+        }
+
+        public Booking GetBookking(int id)
+        {
+            var AD = (from I in db.Bookings where I.GuestID.Equals(id) select I).FirstOrDefault();
+            return AD;
         }
 
         public List<Booking> Read()
         {
-            return db.Bookings.ToList();
+            throw new NotImplementedException();
         }
 
         public Booking Read(int id)
         {
-            return db.Bookings.Find(id);
+            throw new NotImplementedException();
         }
 
         public Booking Update(Booking obj)
         {
-            var ex = Read(obj.BookingID);// Update 
-            db.Entry(ex).CurrentValues.SetValues(obj);
-            if (db.SaveChanges() > 0) return obj;
-            return null;
-
+            throw new NotImplementedException();
         }
     }
 }

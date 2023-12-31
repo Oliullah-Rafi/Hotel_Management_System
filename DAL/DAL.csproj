@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBooked.cs" />
+    <Compile Include="Interfaces\IBooking.cs" />
     <Compile Include="Interfaces\IRepo.cs" />
     <Compile Include="Migrations\202312241336559_initDB.cs" />
     <Compile Include="Migrations\202312241336559_initDB.designer.cs">
@@ -69,6 +71,7 @@
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\RoomType.cs" />
     <Compile Include="Models\Staff.cs" />
+    <Compile Include="Repos\BookedRepo.cs" />
     <Compile Include="Repos\BookingRepo.cs" />
     <Compile Include="Repos\GuestRepo.cs" />
     <Compile Include="Repos\HotelRepo.cs" />

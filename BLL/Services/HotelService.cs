@@ -71,5 +71,16 @@ namespace BLL.Services
         {
             return DataAccessFactory.HotelData().Delete(id);
         }
+        public static BookingDTO BookingSearch(int c)
+        {
+            var data = DataAccessFactory.BookingData().GetBookking(c);
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Booking, BookingDTO>();
+            });
+            var mapper = new Mapper(config);
+            var converted = mapper.Map<BookingDTO>(data);
+            return converted;
+        }
     }
 }

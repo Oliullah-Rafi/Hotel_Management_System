@@ -17,9 +17,13 @@ namespace DAL
         }
 
 
-        public static IRepo<Booking, int, Booking> BookingData()
+        public static IBooking<Booking,int, Booking> BookingData()
         {
             return new BookingRepo();
+        }
+        public static IBooked<Room, int, Room> RoomServiceData()
+        {
+            return new BookedRepo();
         }
 
         public static IRepo<Guest, int, Guest> GuestData()
@@ -45,6 +49,11 @@ namespace DAL
         public static IRepo<Staff, int, Staff> StaffData()
         {
             return new StaffRepo();
+        }
+
+        public static object BookingServiceData()
+        {
+            throw new NotImplementedException();
         }
     }
 }

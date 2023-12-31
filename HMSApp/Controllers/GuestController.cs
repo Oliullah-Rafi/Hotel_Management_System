@@ -1,6 +1,5 @@
 ﻿using BLL.DTOs;
 using BLL.Services;
-using DAL.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,33 +9,34 @@ using System.Web.Http;
 
 namespace HMSApp.Controllers
 {
-    public class HotelController : ApiController
+    public class GuestController : ApiController
     {
+
         [HttpGet]
-        [Route("api/hotels/all")]
-        public HttpResponseMessage Hotels()
+        [Route("api/Guests/all")]
+        public HttpResponseMessage Guests()
         {
             try
             {
-                var data = HotelService.Get();
+                var data = GuestService.Get();
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
             }
 
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
 
         [HttpGet]
-        [Route("api/hotels/{id}")]
+        [Route("api/Guests/{id}")]
         public HttpResponseMessage Get(int id)
         {
 
             try
             {
-                var data = HotelService.Get(id);
+                var data = GuestService.Get(id);
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
             }
@@ -48,12 +48,12 @@ namespace HMSApp.Controllers
         }
 
         [HttpPost]
-        [Route("api/hotels/create")]
-        public HttpResponseMessage Create(HotelDTO obj)
+        [Route("api/Guests/create")]
+        public HttpResponseMessage Create(GuestDTO obj)
         {
             try
             {
-                var data = HotelService.Add(obj);
+                var data = GuestService.Add(obj);
 
                 return Request.CreateResponse(HttpStatusCode.OK, data);
 
@@ -66,13 +66,13 @@ namespace HMSApp.Controllers
         }
 
         [HttpPost]
-        [Route("api/hotels/update/{id}")]
-        public HttpResponseMessage Update(HotelDTO obj)
+        [Route("api/Guests/update/{id}")]
+        public HttpResponseMessage Update(GuestDTO obj)
         {
 
             try
             {
-                var updatedData = HotelService.Update(obj);
+                var updatedData = GuestService.Update(obj);
                 return Request.CreateResponse(HttpStatusCode.OK, updatedData);
 
             }
@@ -84,8 +84,9 @@ namespace HMSApp.Controllers
         }
 
 
+
         [HttpGet]
-        [Route("api/bookingSearchDetails/{id}")]
+        [Route("api/GuestBookingDetails/{id}")]
         public HttpResponseMessage BookingSearch(int id)
         {
 
@@ -101,24 +102,7 @@ namespace HMSApp.Controllers
                 return Request.CreateResponse(HttpStatusCode.InternalServerError, new { Message = ex.Message });
             }
         }
-        [Route("api/BookRoom/{id}")]
-        [HttpGet]
-        public HttpResponseMessage BookRoom(int id)
-        {
-
-            try
-            {
-                var isUpdated = RoomService.Booked(id);
-                return Request.CreateResponse(HttpStatusCode.OK, isUpdated);
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, ex);
-            }
-
-        }
-
-
+       
+       
     }
 }
-
