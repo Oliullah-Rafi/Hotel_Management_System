@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Interfaces
 {
-    public interface IBooked<TYPE,ID,RET>
+    public interface IBooked<TYPE, ID, RET>
     {
-       
+
 
         bool Book(ID id);
 

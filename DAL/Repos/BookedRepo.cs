@@ -10,12 +10,11 @@ namespace DAL.Repos
 {
     internal class BookedRepo : Repo, IBooked<Room, int, Room>
     {
+
         public bool Book(int id)
         {
             var AD = (from I in db.Rooms where I.RoomID.Equals(id) select I).FirstOrDefault();
             AD.Status = "Booked !!!";
-           
-
 
             try
             {

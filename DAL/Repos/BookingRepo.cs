@@ -11,15 +11,7 @@ namespace DAL.Repos
 
     internal class BookingRepo : Repo, IBooking<Booking, int, Booking>
     {
-        public Booking Create(Booking obj)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
+      
 
         public Booking GetBookking(int id)
         {
@@ -27,19 +19,45 @@ namespace DAL.Repos
             return AD;
         }
 
+    
+
+
+        public Booking Create(Booking obj)
+        {
+            db.Bookings.Add(obj);
+
+            if (db.SaveChanges() > 0) return obj;
+
+            return null;
+        }
+
+
+        public bool Delete(int id)
+        {
+            var ex = Read(id);
+            db.Bookings.Remove(ex);
+            return db.SaveChanges() > 0;
+        }
+
         public List<Booking> Read()
         {
-            throw new NotImplementedException();
+            return db.Bookings.ToList();
         }
 
         public Booking Read(int id)
         {
-            throw new NotImplementedException();
+            return db.Bookings.Find(id);
         }
 
         public Booking Update(Booking obj)
         {
-            throw new NotImplementedException();
+            var ex = Read(obj.BookingID);// Update 
+            db.Entry(ex).CurrentValues.SetValues(obj);
+            if (db.SaveChanges() > 0) return obj;
+            return null;
+
         }
+
+
     }
 }

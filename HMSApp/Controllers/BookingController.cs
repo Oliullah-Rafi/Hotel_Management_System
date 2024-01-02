@@ -64,7 +64,7 @@ namespace HMSApp.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("api/Bookings/update/{id}")]
         public HttpResponseMessage Update(BookingDTO obj)
         {
